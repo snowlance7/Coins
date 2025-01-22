@@ -11,8 +11,7 @@ namespace Coins
     internal class CoinBehavior : NetworkBehaviour
     {
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        public AudioSource CoinAudio;
-        //public AudioClip CoinCollectSFX;
+        public AudioClip CoinCollectSFX;
 
         static Terminal terminal;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
@@ -28,6 +27,7 @@ namespace Coins
         public void OnTriggerEnter(Collider other)
         {
             if (!other.gameObject.TryGetComponent(out PlayerControllerB player)) { return; }
+            player.statusEffectAudio.PlayOneShot(CoinCollectSFX, configCoinVolume.Value);
             CollectCoinServerRpc();
         }
 
@@ -42,7 +42,6 @@ namespace Coins
         [ClientRpc]
         public void CollectCoinClientRpc()
         {
-            CoinAudio.Play();
             terminal.groupCredits += configCoinValue.Value;
         }
     }

@@ -1,8 +1,8 @@
 {
-  "name": "CoolPeopleMod",
+  "name": "Coins",
   "version_number": "1.0.0",
-  "website_url": "https://github.com/snowlance7/CoolPeopleMod",
-  "description": "A mod for cool people",
+  "website_url": "https://github.com/snowlance7/Coins",
+  "description": "Adds coins around the game that gives you credits",
   "dependencies": [
     "BepInEx-BepInExPack-5.4.2100",
     "Evaisa-LethalLib-0.16.2"

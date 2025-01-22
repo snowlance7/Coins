@@ -1,8 +1,8 @@
-# Cool People Mod
+# Coins Mod
 
 ## Contact
 
-For issues and suggestions visit the [github](https://github.com/snowlance7/CoolPeopleMod).
+For issues and suggestions visit the [github](https://github.com/snowlance7/Coins).
 
 ## For collaboration or queries
 
@@ -13,3 +13,4 @@ For issues and suggestions visit the [github](https://github.com/snowlance7/Cool
 
 ## Credit
 
+"Super Mario Bros Coin" (https://skfb.ly/6zNTJ) by BranHelsing is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).

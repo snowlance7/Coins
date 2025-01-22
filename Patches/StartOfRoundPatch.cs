@@ -14,6 +14,8 @@ namespace Coins.Patches
     {
         private static ManualLogSource logger = Plugin.LoggerInstance;
 
+        const float verticalOffset = 0.5f;
+
         [HarmonyPostfix]
         [HarmonyPatch(nameof(StartOfRound.OnShipLandedMiscEvents))]
         public static void OnShipLandedMiscEventsPostfix()
@@ -38,7 +40,7 @@ namespace Coins.Patches
                         continue;
                     }
 
-                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position, Quaternion.identity).GetComponent<CoinBehavior>();
+                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position + Vector3.up * verticalOffset, Quaternion.identity).GetComponent<CoinBehavior>();
                     coin.NetworkObject.Spawn(destroyWithScene: true);
                 }
             }
@@ -61,7 +63,7 @@ namespace Coins.Patches
                         continue;
                     }
 
-                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position, Quaternion.identity).GetComponent<CoinBehavior>();
+                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position + Vector3.up * verticalOffset, Quaternion.identity).GetComponent<CoinBehavior>();
                     coin.NetworkObject.Spawn(destroyWithScene: true);
                 }
             }
