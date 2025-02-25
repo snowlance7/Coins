@@ -1,6 +1,6 @@
 {
   "name": "Coins",
-  "version_number": "1.0.1",
+  "version_number": "1.0.2",
   "website_url": "https://github.com/snowlance7/Coins",
   "description": "Adds coins around the game that gives you credits",
   "dependencies": [

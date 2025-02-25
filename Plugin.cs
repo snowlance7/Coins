@@ -31,7 +31,6 @@ namespace Coins
         // Configs
         public static ConfigEntry<int> configCoinValue;
         public static ConfigEntry<float> configInsideAmount;
-        public static ConfigEntry<float> configOutsideAmount;
         public static ConfigEntry<float> configCoinVolume;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
@@ -51,7 +50,6 @@ namespace Coins
             // Configs
             configCoinValue = Config.Bind("General", "Coin Value", 1, "How many credits will be added when a coin is collected");
             configInsideAmount = Config.Bind("General", "Inside Amount", 1f, "The percentage of AI nodes from 0-1 that a coin will spawn on inside.");
-            configOutsideAmount = Config.Bind("General", "Outside Amount", 0f, "The percentage of AI nodes from 0-1 that a coin will spawn on outside.");
             configCoinVolume = Config.Bind("General", "Coin Volume", 0.5f, "The volume of the collect coin sound effect when a coin is collected. Needs to be 0-1.");
 
             // Loading Assets

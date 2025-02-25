@@ -40,30 +40,7 @@ namespace Coins.Patches
                         continue;
                     }
 
-                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position + Vector3.up * verticalOffset, Quaternion.identity).GetComponent<CoinBehavior>();
-                    coin.NetworkObject.Spawn(destroyWithScene: true);
-                }
-            }
-
-            // Outside
-            if (configOutsideAmount.Value != 0f)
-            {
-                int spawnAmount = (int)(RoundManager.Instance.outsideAINodes.Length * configOutsideAmount.Value);
-                logger.LogDebug($"Spawning {spawnAmount} coins outside");
-
-                List<GameObject> nodes = RoundManager.Instance.outsideAINodes.ToList();
-                for (int i = 0; i < spawnAmount; i++)
-                {
-                    GameObject node = GetRandomAINode(nodes);
-                    nodes.Remove(node);
-
-                    if (node == null)
-                    {
-                        i--;
-                        continue;
-                    }
-
-                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position + Vector3.up * verticalOffset, Quaternion.identity).GetComponent<CoinBehavior>();
+                    CoinBehavior coin = GameObject.Instantiate(CoinPrefab, node.transform.position + Vector3.up * verticalOffset, Quaternion.identity, RoundManager.Instance.mapPropsContainer.transform).GetComponent<CoinBehavior>();
                     coin.NetworkObject.Spawn(destroyWithScene: true);
                 }
             }
